@@ -1,0 +1,58 @@
+def matVec(matrix,vector):
+  
+  rA = len(matrix)# find the number of rows in matrix A
+  cA = len(matrix[0])# find the number of columns in matrix A
+  rB = len(vector)# find the number of rows in vector B
+  cB = len(vector[0])# find number of columns in vector B; should be 1
+  
+  if(vector):# checks to see if the vector has multiple columns and if it is a string
+    if(cB > 1) or type(vector) == str:
+      return;
+
+  if(matrix):# checks to see if the matrix is a string
+    if(type(matrix) == str):
+      return;
+
+  container = [] # creates a new array
+  
+  for i in range(rA):
+
+    for k in range(rB):
+        # iterate through columns of matrix A
+      for j in range(cA):
+              #iterate through rows of vector B, should be 1
+
+        container.append(matrix[i][j] * vector[k]) # add elemet to container
+
+       # add (row)to row to new matrix
+      '''
+        multiply the first column of matrix by the first row of vector,
+        iterate for the number of columns in the matrix 
+        then sum up all the values in the same row 
+      '''
+      
+  print("No errors in code!")  
+
+
+
+
+
+testmatrix01 = [[12,7,3],
+                [4,5,6],
+                [7,8,9]]
+testmatrix02 = [1,2,3]
+testmatrix03 = 'this is a test'
+
+testVector01 = [[5],
+                [8],
+                [1]]
+testVector02 = [[12,7,3],
+                [4 ,5,6],
+                [7 ,8,9]]
+testVector03 = True
+
+# These are test cases for the function matVec. All but one of the tests should be commented out at a time so that we can see how each pair of inputs effects the output. 
+
+print(matVec(testmatrix01,testVector01))
+#print(matVec(testmatrix02,testVector02))
+#print(matVec(testmatrix03,testVector03))  
