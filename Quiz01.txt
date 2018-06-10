@@ -31,7 +31,7 @@ def matVec(matrix,vector):
         then sum up all the values in the same row 
       '''
       
-  print("No errors in code!")  
+  print("No errors in code!")# lets me know if I still have bugs in the code
 
 
 
