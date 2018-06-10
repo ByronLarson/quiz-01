@@ -1,0 +1,46 @@
+
+def matVec(matrix,vector):
+  '''
+A =[[12,7,3],[4,5,6],[7,8,9]]
+
+B = [[5],[8],[1]]
+  '''
+
+rA = len(matrix)# find the number of rows in matrix A
+cA = len(matrix[0])# find the number of columns in matrix A
+rB = len(vector)# find the number of rows in vector B
+cB = len(vector[0])# find number of columns in vector B; should be 1
+
+  
+if rA == 1:# if there is only one row in the matrix it is not a matrix
+
+  print("The first input is not a matrix.")
+
+else:
+
+  if cA == rB:
+    # compare columns value of matrix A with row value of vector B
+
+    for i in range(rA):
+      # iterate through rows of matrix A
+
+      if cB == 1:
+        # checks that the vector is actually a vector and not a matrix or string
+
+        for j in range(cB):
+          #iterate through columns of vector B
+
+          for k in range(rB):
+            #iterate through rows of vector B, should be 1
+
+            matVec += A[i][k] * B[k][j]
+
+      else:
+
+        print(" The second input is not a vector.")
+
+  else: 
+
+    print("vector is wrong dimension to multiply")
+for r in matVec:
+  print(r)
