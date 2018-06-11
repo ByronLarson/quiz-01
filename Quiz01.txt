@@ -36,7 +36,7 @@ def matVec(matrix,vector):
         #iterate through columns of the matrix
         con +=  matrix[i][k]*vector[k][j]
         #use += to add con + calculated value to placeholder matrix
-      container[i][j] = con #final matrix will be the number of rows by 1 column
+      container[i] = con #final matrix will be the number of rows by 1 column
   return container
 
 
