@@ -17,11 +17,11 @@ def matVec(matrix,vector):
   cB = len(vector[0])# find number of columns in vector B; should be 1
   if(vector):
     if(cB > 1) or type(vector) == str:
-      return;
+      return
 
   if(matrix):
     if(type(matrix) == str):
-      return;
+      return
 
   #initialize a container to be a matrix  with 0s for all entries.
   container = [[0]*1 for row in range(rA)]
