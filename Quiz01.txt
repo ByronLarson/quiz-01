@@ -6,7 +6,7 @@ def matVec(matrix,vector):
   Output:
     C - matrix with dimensions row-matrix x 1
   Details:
-    This is the matrix by vector multiplication algorithm.
+    This is the matrix times vector multiplication algorithm.
     For each matrix row, each vector columns = 1, and con to 0. con is the placeholder matrix to add each repition. Then for each matrix     column, add matrix[i][k]*vector[k] to con. Then set container[i][1] = con.
     The result is a Matrix rows in the matrix by 1.
   '''
