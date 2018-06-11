@@ -1,16 +1,14 @@
 def matVec(matrix,vector):
   '''
   Inputs:
-    A- matrix with dimensions n x m
-    B- matrix with dimensions m x p
+    A- matrix with dimensions row-matrix x column-matrix
+    B- matrix with dimensions row-vector x 1
   Output:
-    C - matrix with dimensions n x p
+    C - matrix with dimensions row-matrix x 1
   Details:
-    This is the implementation of the matrix by matrix multiplication algorithm.
-    For each i in range(matrix rows), each j in range(vector columns = 1),
-    initialize variable con to 0. Then for each k in range(matrix columns),
-    add matrix[i][k]*vector[k][1] to con. Then set container[i][1] = con.
-    The result is a Matrix rA x 1, the matrix equal to matrix*vector.
+    This is the matrix by vector multiplication algorithm.
+    For each matrix row, each vector columns = 1, and con to 0. con is the placeholder matrix to add each repition. Then for each matrix     column, add matrix[i][k]*vector[k] to con. Then set container[i][1] = con.
+    The result is a Matrix rows in the matrix by 1.
   '''
 
   rA = len(matrix)# find the number of rows in matrix A
@@ -37,7 +35,7 @@ def matVec(matrix,vector):
       for k in range(cA):
         #iterate through columns of the matrix
         con +=  matrix[i][k]*vector[k][j]
-        #use += to add con + calculated value
+        #use += to add con + calculated value to placeholder matrix
       container[i][j] = con #final matrix will be the number of rows by 1 column
   return container
 
