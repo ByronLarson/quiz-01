@@ -37,7 +37,7 @@ def matVec(matrix,vector):
       for k in range(cA):
         #iterate through columns of the matrix
         con +=  matrix[i][k]*vector[k][j]
-        #short for c_ij = c_ij + A[i][k]*B[k][j]
+        #use += to add con + calculated value
       container[i][j] = con #final matrix will be the number of rows by 1 column
   return container
 
