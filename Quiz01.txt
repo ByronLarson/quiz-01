@@ -1,40 +1,45 @@
 def matVec(matrix,vector):
-  
+  '''
+  Inputs:
+    A- matrix with dimensions n x m
+    B- matrix with dimensions m x p
+  Output:
+    C - matrix with dimensions n x p
+  Details:
+    This is the implementation of the matrix by matrix multiplication algorithm.
+    For each i in range(matrix rows), each j in range(vector columns = 1),
+    initialize variable con to 0. Then for each k in range(matrix columns),
+    add matrix[i][k]*vector[k][1] to con. Then set container[i][1] = con.
+    The result is a Matrix rA x 1, the matrix equal to matrix*vector.
+  '''
+
   rA = len(matrix)# find the number of rows in matrix A
   cA = len(matrix[0])# find the number of columns in matrix A
   rB = len(vector)# find the number of rows in vector B
   cB = len(vector[0])# find number of columns in vector B; should be 1
-  
-  if(vector):# checks to see if the vector has multiple columns and if it is a string
+  if(vector):
     if(cB > 1) or type(vector) == str:
       return;
 
-  if(matrix):# checks to see if the matrix is a string
+  if(matrix):
     if(type(matrix) == str):
       return;
 
-  container = [] # creates a new array
-  
+  #initialize a container to be a matrix  with 0s for all entries.
+  container = [[0]*1 for row in range(rA)]
+
+
   for i in range(rA):
-
-    for k in range(rB):
-        # iterate through columns of matrix A
-      for j in range(cA):
-              #iterate through rows of vector B, should be 1
-
-        container.append(matrix[i][j] * vector[k]) # add elemet to container
-
-       # add (row)to row to new matrix
-      '''
-        multiply the first column of matrix by the first row of vector,
-        iterate for the number of columns in the matrix 
-        then sum up all the values in the same row 
-      '''
-      
-  print("No errors in code!")# lets me know if I still have bugs in the code
-
-
-
+    # iterate through rows of the matrix
+    for j in range(cB):
+      # iterate through columns of vector whish should be 1
+      con= 0
+      for k in range(cA):
+        #iterate through columns of the matrix
+        con +=  matrix[i][k]*vector[k][j]
+        #short for c_ij = c_ij + A[i][k]*B[k][j]
+      container[i][j] = con #final matrix will be the number of rows by 1 column
+  return container
 
 
 testmatrix01 = [[12,7,3],
@@ -55,4 +60,4 @@ testVector03 = True
 
 print(matVec(testmatrix01,testVector01))
 #print(matVec(testmatrix02,testVector02))
-#print(matVec(testmatrix03,testVector03))  
+#print(matVec(testmatrix03,testVector03)) 
